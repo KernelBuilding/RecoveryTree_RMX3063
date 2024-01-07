@@ -62,8 +62,6 @@ service prepdecrypt /system/bin/prepdecrypt.sh
     seclabel u:r:recovery:s0
 
 on property:crypto.ready=1 && property:ro.crypto.state=encrypted
-    mkdir /mnt/vendor/persist
-    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
     install_keyring
 
 on property:crypto.ready=1 && property:hwservicemanager.ready=true
