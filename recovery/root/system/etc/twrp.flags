@@ -5,7 +5,8 @@
 /vendor_image		emmc	/dev/block/mapper/vendor							flags=display="Vendor Image";backup=1;flashimg=1
 
 # Common partition
-/super_image     emmc    /dev/block/platform/bootdevice/by-name/super              flags=backup=1;display="Super"
+/super_image     emmc    /dev/block/bootdevice/by-name/super                       flags=display="Super_Image";backup=1;flashimg=1
+/super           ext4    /dev/block/bootdevice/by-name/super                       flags=display="Super";backup=1;logical;wipeingui
 /data            ext4    /dev/block/platform/bootdevice/by-name/userdata           flags=fileencryption=aes-256-xts
 /boot            emmc    /dev/block/platform/bootdevice/by-name/boot               flags=backup=1;display="Boot";flashimg=1
 /dtbo            emmc    /dev/block/platform/bootdevice/by-name/dtbo               flags=backup=1;display="Dtbo";flashimg=1
