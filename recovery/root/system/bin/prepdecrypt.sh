@@ -7,6 +7,6 @@ else
   # so skip decryption
   #rm /system/etc/vintf/manifest.xml
   rm /vendor/etc/vintf/manifest.xml
-  setprop crypto.ready 0
+  setprop crypto.ready 1
 fi
 
