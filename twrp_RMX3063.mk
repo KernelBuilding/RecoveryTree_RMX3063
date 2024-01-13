@@ -17,7 +17,7 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/realme/RMX3063/device.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
