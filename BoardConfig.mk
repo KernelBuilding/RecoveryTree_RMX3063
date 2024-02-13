@@ -119,16 +119,16 @@ TW_USE_FSCRYPT_POLICY := 1
 
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
-    libpuresoftkeymasterdevice \
-    ashmemd_aidl_interface-cpp \
-    libashmemd_client
+ libkeymaster4 \
+ libpuresoftkeymasterdevice \
+ ashmemd_aidl_interface-cpp \
+ libashmemd_client
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
+$(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+$(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+$(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+$(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -157,3 +157,17 @@ TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := 50
 TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_POS := 800
+
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+system \
+vendor \
+product \
+system_ext \
+vendor_dlkm \
+odm_dlkm \
+boot \
+vbmeta_vendor \
+vbmeta_system \
+vendor_boot
