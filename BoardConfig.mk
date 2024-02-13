@@ -157,17 +157,3 @@ TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := 50
 TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_POS := 800
-
-# A/B
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-system \
-vendor \
-product \
-system_ext \
-vendor_dlkm \
-odm_dlkm \
-boot \
-vbmeta_vendor \
-vbmeta_system \
-vendor_boot
