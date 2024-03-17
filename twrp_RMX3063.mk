@@ -20,10 +20,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/skywall/config/common.mk)
 
 PRODUCT_DEVICE := RMX3063
-PRODUCT_NAME := twrp_RMX3063
+PRODUCT_NAME := skywall_RMX3063
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3063
 PRODUCT_MANUFACTURER := realme
