@@ -13,9 +13,9 @@ BUTTON_TEXT="Download"
 REPLY_MARKUP="{"inline_keyboard": [[{"text": "$BUTTON_TEXT", "url": "https://github.com/KernelBuilding/RecoveryTree_RMX3063"}]]}"
 
 # KIRIM PESAN DENGAN FOTO DAN TOMBOL
-curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto" 
--F chat_id="$CHAT_ID" 
--F photo="@$IMAGE_PATH" 
--F caption="$MESSAGE" 
--F parse_mode="MarkdownV2" 
+curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto" \
+-F chat_id="$CHAT_ID" \
+-F photo="@$IMAGE_PATH" \
+-F caption="$MESSAGE" \
+-F parse_mode="MarkdownV2" \
 -F reply_markup="$REPLY_MARKUP"
