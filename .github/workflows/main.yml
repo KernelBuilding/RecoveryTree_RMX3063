@@ -1,0 +1,26 @@
+name: SHRP BUILDER
+
+on:
+  workflow_dispatch:
+    inputs:
+      RUNNING:
+        description: 'Building SHRP'
+        required: true
+        default: 'start'
+        
+jobs:
+  build:
+    name: Start Build By ${{ github.actor }}
+    runs-on: ubuntu-20.04
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+    steps:
+    - name: Check Out
+      uses: actions/checkout@v3
+      
+    - name: Running Script # Installing Dependencies
+      run: |
+        bash Uploader.sh
