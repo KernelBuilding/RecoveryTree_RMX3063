@@ -145,8 +145,8 @@ TARGET_USES_MKE2FS := true
 TW_OZIP_DECRYPT_KEY := 0000
 
 # Remove Verifikasi Lockscreen Pass On TWRP
-TW_RECOVERY_DISABLE_LOCKSCREEN_PASSPHRASE := true
 TW_INCLUDE_CMD_INTERFACE=true
+TW_INCLUDE_FBE := true
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
