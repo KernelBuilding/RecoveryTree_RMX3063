@@ -2,29 +2,37 @@
 
 # Konfigurasi Telegram
 BOT_TOKEN="6868662734:AAE2WyTGytSFbfV0jjDnP_hmtXh4RMZ59Yw"
-CHAT_ID="-1002042015183
+CHAT_ID="-1002042015183"
 
-# Variabel untuk teks dan foto
-TEXT="Pesan teks yang ingin dikirim"
-IMAGE_PATH="banner.png"
+# Pesan yang akan dikirim
+MESSAGE=" test
+[Link Download](https://github.com/KernelBuilding/RecoveryTree_RMX3063)"
 
-# Buat URL untuk mengirim teks dan foto
-URL="https://api.telegram.org/bot${BOT_TOKEN}/sendMessage"
-URL_PHOTO="https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto"
+# Tombol pada pesan
+INLINE_KEYBOARD='[{"text": "Unduh", "url": "https://github.com/KernelBuilding/RecoveryTree_RMX3063"}]'
 
-# Kirim pesan teks
-curl -s -X POST $URL \
-  -H "Content-Type: application/json" \
-  -d "{\"chat_id\": ${CHAT_ID}, \"text\": \"${TEXT}\"}"
+# Banner
+BANNER_PATH="banner.png"
 
-# Kirim foto dengan caption
-curl -s -X POST $URL_PHOTO \
-  -H "Content-Type: multipart/form-data" \
-  -F "chat_id=${CHAT_ID}" \
-  -F "caption=${TEXT}" \
-  -F "photo=@${IMAGE_PATH}"
+# Fungsi untuk mengirim pesan dengan tombol
+send_message_with_button() {
+    curl -s -X POST \
+        "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+        -d "chat_id=${CHAT_ID}" \
+        -d "text=${MESSAGE}" \
+        -d "reply_markup=${INLINE_KEYBOARD}"
+}
 
-# Kirim tombol link
-curl -s -X POST $URL \
-  -H "Content-Type: application/json" \
-  -d "{\"chat_id\": ${CHAT_ID}, \"text\": \"${TEXT}\", \"reply_markup\": { \"keyboard\": [[{\"download\": \"Link\", \"url\": \"https://github.com/KernelBuilding/RecoveryTree_RMX3063\"}]], \"resize_keyboard\": true}}}"
+# Fungsi untuk mengirim gambar
+send_image() {
+    curl -s -X POST \
+        "https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto" \
+        -F "chat_id=${CHAT_ID}" \
+        -F "photo=@${BANNER_PATH}"
+}
+
+# Kirim gambar banner
+send_image
+
+# Kirim pesan dengan tombol
+send_message_with_button
