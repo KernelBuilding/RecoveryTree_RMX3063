@@ -24,7 +24,7 @@ Spesial Thanks :
 • @Ipank_0p For Testing
 • @RanYakhsza 
 
-#shrp #unofficial #recovery #RMX3063
+\\#shrp \\#unofficial \\#recovery \\#RMX3063
 "
 IMAGE_PATH="banner.png"
 BUTTON_TEXT="Download"
