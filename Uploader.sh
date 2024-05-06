@@ -8,7 +8,7 @@ CHAT_ID="-1002042015183"
 MESSAGE="Ini pesan dengan foto dan tombol."
 IMAGE_PATH="banner.png"
 BUTTON_TEXT="Download"
-REPLY_MARKUP='{"inline_keyboard": [{"text": "'"$BUTTON_TEXT"'", "url": "https://github.com/KernelBuilding/RecoveryTree_RMX3063"}]}'
+REPLY_MARKUP='{"inline_keyboard": [[{"text": "'"$BUTTON_TEXT"'", "url": "https://github.com/KernelBuilding/RecoveryTree_RMX3063"}]]}'
 
 # KIRIM PESAN DENGAN FOTO DAN TOMBOL
 curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto" \
