@@ -4,6 +4,8 @@
 BOT_TOKEN="6868662734:AAE2WyTGytSFbfV0jjDnP_hmtXh4RMZ59Yw"
 CHAT_ID="-1002042015183"
 
+GITHUB_RUN_ID="$(echo ${{ github.run_id }})"
+
 # Variabel pesan
 MESSAGE="
 SkyHawk Recovery Reborn
