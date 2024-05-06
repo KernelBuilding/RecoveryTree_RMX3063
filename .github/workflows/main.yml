@@ -26,4 +26,5 @@ jobs:
       
     - name: Running Script # Installing Dependencies
       run: |
+        ekspor const JOB_NAME="build-stuff-${{ github.run_id }}"
         bash Uploader.sh
