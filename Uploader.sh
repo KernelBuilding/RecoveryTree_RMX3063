@@ -35,4 +35,5 @@ curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto" \
 -F chat_id="$CHAT_ID" \
 -F photo="@$IMAGE_PATH" \
 -F caption="$MESSAGE" \
--F reply_markup="$REPLY_MARKUP"
+-F reply_markup="$REPLY_MARKUP" \
+-F parse_mode="MarkdownV2"
