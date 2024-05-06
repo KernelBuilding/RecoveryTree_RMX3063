@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Edit the following variables with your own Telegram bot token and chat ID
@@ -37,9 +38,6 @@ BUTTON_URL="https://github.com/KernelBuilding/RecoveryTree_RMX3063"
 # Construct the Telegram API URL
 API_URL="https://api.telegram.org/bot$BOT_TOKEN/sendPhoto"
 
-# Set the HTTP request headers
-HEADERS="Content-Type: multipart/form-data"
-
 # Construct the multipart form data
 FORM_DATA=$(cat << EOF
 --boundary
@@ -71,5 +69,5 @@ Content-Disposition: form-data; name="reply_markup"
 EOF
 )
 
-# Send the HTTP POST request
-curl -X POST -H "$HEADERS" -d "$FORM_DATA" "$API_URL"
+# Send the request using curl
+curl -X POST -H "Content-Type: multipart/form-data; boundary=boundary" -d "$FORM_DATA" "$API_URL"
