@@ -3,3 +3,4 @@ fbe.metadata.wrappedkey=true
 ro.boot.dynamic_partitions=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 ro.display.series=Realme C20
+ro.crypto.type=file
