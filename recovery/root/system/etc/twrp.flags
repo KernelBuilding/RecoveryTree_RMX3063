@@ -37,4 +37,4 @@
 
 # SDCard and USB OTG
 /external_sd auto /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="External SDcard";storage;wipeingui;removable;backup=0
-/usb-otg         auto      /dev/block/sdd1              /dev/block/sdd        flags=storage;wipeingui;removable
+/usb_otg         auto      /dev/block/sdd1              /dev/block/sdd        flags=storage;wipeingui;removable
