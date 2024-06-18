@@ -120,7 +120,6 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_USE_FSCRYPT_POLICY := 1
 TARGET_USERIMAGES_USE_FBE := true
 
 # Additional binaries & libraries needed for recovery
@@ -150,6 +149,9 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_USES_MKE2FS := true
 TW_OZIP_DECRYPT_KEY := 0000
 BOARD_RECOVERY_VOLUME_UP := true
+
+# Enable flashlight
+BOARD_HAS_FLASHLIGHT := true
 
 # Remove Verifikasi Lockscreen Pass On TWRP
 TW_INCLUDE_CMD_INTERFACE=true
