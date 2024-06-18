@@ -167,7 +167,7 @@ TW_INCLUDE_FLASHLIGHT := true
 TW_TORCH_PATH := "/proc/qcom_flash"
 
 # TWRP Version
-TW_DEVICE_VERSION := "By PGYT PROJECT"
+TW_DEVICE_VERSION := By ProjectKernel2 
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
