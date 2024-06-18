@@ -3,8 +3,8 @@
 /dev/block/platform/bootdevice/by-name/para        /misc        emmc    defaults                                             defaults
 
 # Core Partitions (Dynamic Partitions)
-system                                           /system               ext4    rw                                                  wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor                                           /vendor               ext4    rw                                                  wait,avb,logical,first_stage_mount
+system                                           /system               ext4    rw                                                  wait,avb=vbmeta_system,logical,wipeingui,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+vendor                                           /vendor               ext4    rw                                                  wait,avb,logical,wipeingui,first_stage_mount
 oppo_product                                     /oppo_product         ext4    rw                                                  wait,logical,first_stage_mount,nofail
 oppo_engineering                                 /oppo_engineering     ext4    rw                                                  wait,logical,first_stage_mount,nofail
 common_preload                                   /common_preload       ext4    rw                                                  wait,logical,first_stage_mount,nofail
