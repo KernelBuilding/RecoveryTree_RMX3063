@@ -164,7 +164,7 @@ TW_DEFAULT_BRIGHTNESS := 1200
 # Enable flashlight
 BOARD_HAS_FLASHLIGHT := true
 TW_INCLUDE_FLASHLIGHT := true
-TW_TORCH_PATH := "/proc/qcom_flash"
+TW_TORCH_PATH := "/sys/class/flashlight"
 
 # TWRP Version
 TW_DEVICE_VERSION := By ProjectKernel2 
