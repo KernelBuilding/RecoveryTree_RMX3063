@@ -17,6 +17,11 @@ on fs
     symlink /mnt/vendor/nvcfg /vendor/nvcfg
     symlink /mnt/vendor/nvdata /vendor/nvdata
 
+on post-fs-data
+    # Create /data/vendor/key_provisioning dir and get proper encryption policy installed
+    # Key Installation
+    mkdir /data/vendor/key_provisioning 0771 system system
+
 service keystore_auth /system/bin/keystore_auth
     oneshot
     user system
@@ -39,7 +44,6 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
     disabled
     seclabel u:r:recovery:s0
 
-#Add for OPPO FBE
 service hal_cryptoeng_oppo /system/bin/vendor.oppo.hardware.cryptoeng@1.0-service
     user root
     group root drmrpc
@@ -70,6 +74,7 @@ on property:crypto.ready=1 && property:ro.crypto.state=encrypted
 
 on property:crypto.ready=1 && property:hwservicemanager.ready=true
     start hal_cryptoeng_oppo
+    start keystore
     start mobicore
     start keymaster-4-0
     start gatekeeper-1-0
@@ -79,15 +84,21 @@ on property:ro.crypto.state=unsupported
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
 
 on property:ro.crypto.state=unencrypted
     stop hal_cryptoeng_oppo
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
 
 on property:twrp.decrypt.done=true
     stop hal_cryptoeng_oppo
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
