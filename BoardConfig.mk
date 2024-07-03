@@ -153,13 +153,15 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_FRAMERATE := 60
 TARGET_USES_MKE2FS := true
 TW_OZIP_DECRYPT_KEY := 0000
-BOARD_RECOVERY_VOLUME_UP := true
 TW_INCLUDE_CMD_INTERFACE=true
 
 # Brightness Flags
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
+
+# Fix Battery Accurate
+TW_USE_LEGACY_BATTERY_SERVICES := true
 
 # Enable flashlight
 BOARD_HAS_FLASHLIGHT := true
