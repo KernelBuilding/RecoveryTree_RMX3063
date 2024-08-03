@@ -169,7 +169,7 @@ TW_INCLUDE_FLASHLIGHT := true
 TW_TORCH_PATH := "/sys/class/flashlight"
 
 # TWRP Version
-TW_DEVICE_VERSION := By ProjectKernel2 
+TW_DEVICE_VERSION := ProjectKernel2 
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
