@@ -1,8 +1,10 @@
 #<src>                                            <mnt_point>  <type>  <mnt_flags and options>                              <fs_mgr_flags>
-/dev/block/platform/bootdevice/by-name/userdata    /data        ext4    noatime,nosuid,nodev,noauto_da_alloc,errors=panic    wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
-/dev/block/platform/bootdevice/by-name/userdata    /data        f2fs    noatime,nosuid,nodev,noauto_da_alloc,errors=panic    wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
+/dev/block/platform/bootdevice/by-name/userdata    /data        ext4    noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,tran_gc wait,check,formattable,quota,resize,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
+/dev/block/platform/bootdevice/by-name/userdata    /data        f2fs    noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,tran_gc wait,check,formattable,quota,resize,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
 /dev/block/platform/bootdevice/by-name/para        /misc        emmc    defaults                                             defaults
 
-# Core Partitions (Dynamic Partitions)
-system                                           /system               ext4    rw,barrier=1                                        wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor                                           /vendor               ext4    ro,barrier=1                                        wait,avb,logical,first_stage_mount
+# Core Partitions (ext4)
+/dev/block/mapper/system      /system        ext4    rw,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/system_ext  /system_ext    ext4    ro,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/product     /product       ext4    ro,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/vendor      /vendor        ext4    rw,nofail,barrier=1,discard          wait,logical
