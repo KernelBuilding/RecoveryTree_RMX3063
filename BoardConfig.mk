@@ -166,7 +166,7 @@ TW_USE_LEGACY_BATTERY_SERVICES := true
 # Enable flashlight
 BOARD_HAS_FLASHLIGHT := true
 TW_INCLUDE_FLASHLIGHT := true
-TW_TORCH_PATH := "/sys/class/flashlight"
+TW_TORCH_PATH := "/proc/qcom_flash"
 
 # TWRP Version
 TW_DEVICE_VERSION := ProjectKernel2 
