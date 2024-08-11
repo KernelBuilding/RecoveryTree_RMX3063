@@ -6,6 +6,9 @@ on post-fs-data
     # Create /data/vendor/key_provisioning dir and get proper encryption policy installed
     mkdir /data/vendor/key_provisioning 0771 system system
 
+on post-fs
+    start mtk.plpath.utils.link
+
 # Service definitions, ensure paths are correct and binaries exist
 service keystore_auth /system/bin/keystore_auth
     oneshot
@@ -27,6 +30,14 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
     user root
     group root
     disabled
+    seclabel u:r:recovery:s0
+
+service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
     seclabel u:r:recovery:s0
 
 service hal_cryptoeng_oppo /system/bin/vendor.oppo.hardware.cryptoeng@1.0-service
@@ -56,8 +67,6 @@ service prepdecrypt /system/bin/prepdecrypt.sh
 
 # Property triggers to manage services based on crypto state
 on property:crypto.ready=1 && property:ro.crypto.state=encrypted
-    mkdir /mnt/vendor/persist
-    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
     install_keyring
 
 on property:crypto.ready=1 && property:hwservicemanager.ready=true
