@@ -1,6 +1,6 @@
 #<src>                                            <mnt_point>  <type>  <mnt_flags and options>                              <fs_mgr_flags>
 /dev/block/platform/bootdevice/by-name/userdata    /data        ext4    noatime,nosuid,nodev,noauto_da_alloc,errors=panic    wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
-/dev/block/platform/bootdevice/by-name/userdata	   /data        f2fs    noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065 wait,check,formattable,reservedsize=128m,latemount,fileencryption=aes-256-xts,readahead_size_kb=128
+/dev/block/platform/bootdevice/by-name/userdata    /data        f2fs    noatime,nosuid,nodev,noauto_da_alloc,errors=panic    wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
 /dev/block/platform/bootdevice/by-name/para        /misc        emmc    defaults                                             defaults
 /dev/block/platform/bootdevice/by-name/persist     /mnt/vendor/persist  ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable,first_stage_mount
 
