@@ -1,0 +1,11 @@
+#<src>                                            <mnt_point>  <type>  <mnt_flags and options>                              <fs_mgr_flags>
+/dev/block/platform/bootdevice/by-name/userdata    /data        ext4    noatime,nosuid,nodev,noauto_da_alloc,errors=panic    wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
+/dev/block/platform/bootdevice/by-name/userdata    /data        f2fs    noatime,nosuid,nodev,noauto_da_alloc,errors=panic    wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
+/dev/block/platform/bootdevice/by-name/para        /misc        emmc    defaults                                             defaults
+/dev/block/platform/bootdevice/by-name/persist     /mnt/vendor/persist  ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable,first_stage_mount
+
+# Core Partitions (ext4)
+/dev/block/mapper/system      /system        ext4    rw,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/system_ext  /system_ext    ext4    ro,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/product     /product       ext4    ro,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/vendor      /vendor        ext4    rw,nofail,barrier=1,discard          wait,logical
