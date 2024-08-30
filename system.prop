@@ -6,3 +6,7 @@ ro.crypto.uses_fs_ioc_add_encryption_key=true
 
 # Product Devices Name
 ro.product.product.device=RMX3063
+
+# Gatekeeper and Keymaster Configuration
+ro.hardware.gatekeeper=trustonic
+ro.hardware.kmsetkey=trustonic
