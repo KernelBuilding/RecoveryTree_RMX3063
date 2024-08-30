@@ -10,3 +10,6 @@ ro.product.product.device=RMX3063
 # Gatekeeper and Keymaster Configuration
 ro.hardware.gatekeeper=trustonic
 ro.hardware.kmsetkey=trustonic
+
+# Dynamic Partitions
+ro.boot.dynamic_partitions=true
