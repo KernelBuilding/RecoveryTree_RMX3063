@@ -25,6 +25,8 @@ PRODUCT_NAME := twrp_RMX3063
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C20
 PRODUCT_MANUFACTURER := realme
+
+# Set TWRP Version / Maintainer Name
 TW_DEVICE_VERSION := ProjectKernel2
 
 PRODUCT_SHIPPING_API_LEVEL := 29
