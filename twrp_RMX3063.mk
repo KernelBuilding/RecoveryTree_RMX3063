@@ -25,13 +25,10 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_DEVICE := RMX3063
 PRODUCT_NAME := twrp_RMX3063
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := RMX3063
+PRODUCT_MODEL := Realme C20
 PRODUCT_MANUFACTURER := realme
 
 PRODUCT_SHIPPING_API_LEVEL := 29
-
-# Dynamic
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # fastbootd
 PRODUCT_PACKAGES += \
