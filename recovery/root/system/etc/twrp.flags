@@ -34,10 +34,6 @@
 /system_ext_image      emmc      /dev/block/mapper/system_ext              flags=display="System_ext Image";backup=1;flashimg=1
 /vendor_image          emmc      /dev/block/mapper/vendor                  flags=display="Vendor Image";backup=1;flashimg=1
 
-# Wipe Support
-/system_ext4         ext4      /dev/block/dm-0                            flags=display="System Ext4";wipeingui
-/vendor_ext4         ext4      /dev/block/dm-1                            flags=display="Vendor Ext4";wipeingui
-
 # SDCard and USB OTG
-/external_sd auto /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="External SDcard";storage;wipeingui;removable;backup=0
-/usb_otg         auto      /dev/block/sdd1              /dev/block/sdd        flags=storage;wipeingui;removable
+/external_sd auto    /dev/block/mmcblk1p1         /dev/block/mmcblk1    flags=display="External SDcard";storage;wipeingui;removable;backup=0
+/usb_otg     auto    /dev/block/sda1              /dev/block/sda        flags=storage;wipeingui;removable
