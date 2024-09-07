@@ -1,8 +1,22 @@
+# Devices Flags
 ro.product.product.device=RMX3063
 fbe.metadata.wrappedkey=true
-ro.boot.dynamic_partitions=true
-ro.crypto.volume.filenames_mode=aes-256-cts
 ro.display.series=Realme C20
-#ro.hardware.paytrigger=trustonic
-#ro.crypto.support_metadata_encrypt=true
+
+# Crypto Settings
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.metadata.enabled=true
+ro.crypto.support_metadata_encrypt=true
+ro.crypto.uses_fs_ioc_add_encryption_key=true
 ro.crypto.type=file
+ro.hardware.paytrigger=trustonic
+
+# Product Devices Name
+ro.product.product.device=RMX3063
+
+# Gatekeeper and Keymaster Configuration
+ro.hardware.gatekeeper=trustonic
+ro.hardware.kmsetkey=trustonic
+
+# Dynamic Partitions
+ro.boot.dynamic_partitions=true
