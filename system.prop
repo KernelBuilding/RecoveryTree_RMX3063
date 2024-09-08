@@ -1,7 +1,6 @@
 # Devices Flags
 ro.product.product.device=RMX3063
 fbe.metadata.wrappedkey=true
-ro.display.series=Realme C20
 
 # Crypto Settings
 ro.crypto.volume.filenames_mode=aes-256-cts
