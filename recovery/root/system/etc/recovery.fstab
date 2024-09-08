@@ -8,4 +8,4 @@
 /dev/block/mapper/system      /system        ext4    rw,nofail,barrier=1,discard          wait,logical
 /dev/block/mapper/system_ext  /system_ext    ext4    ro,nofail,barrier=1,discard          wait,logical
 /dev/block/mapper/product     /product       ext4    ro,nofail,barrier=1,discard          wait,logical
-/dev/block/mapper/vendor      /vendor        ext4    rw,nofail,barrier=1,discard          wait,logical
+/dev/block/mapper/vendor      /vendor        ext4    ro,nofail,barrier=1,discard          wait,logical
